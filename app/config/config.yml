@@ -60,6 +60,13 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
+        mappings:
+            App:
+                type:      annotation
+                is_bundle: false
+                dir:       '%kernel.root_dir%/../src/Domain/Entity'
+                prefix:    'Domain\Entity'
+                alias:     App
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -68,3 +75,7 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+dunglas_action:
+    directories: # List of directories relative to the kernel root directory containing classes to auto-register.
+        - '../src/Infrastructure/{Controller,Action,Command,EventSubscriber}'

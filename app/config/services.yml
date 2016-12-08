@@ -2,8 +2,8 @@
 # http://symfony.com/doc/current/service_container.html
 parameters:
 #    parameter_name: value
+    baseDir: %kernel.root_dir%/..
 
 services:
-#    service_name:
-#        class: AppBundle\Directory\ClassName
+#    'My\ClassName':
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
